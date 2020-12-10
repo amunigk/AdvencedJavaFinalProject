@@ -42,6 +42,17 @@ public class LoginController implements Initializable {
     private void handleLogin(ActionEvent event) throws IOException {
         //validate login info
             //if info is valid
+        Window display = submitButton.getScene().getWindow();
+        if (usernameField.getText().isEmpty()) {
+            showAlert(Alert.AlertType.ERROR, display, "Form Error!",
+                "Please enter your email id");
+            return;
+        }
+        if (passwordField.getText().isEmpty()) {
+            showAlert(Alert.AlertType.ERROR, display, "Form Error!",
+                "Please enter a password");
+            return;
+        }
             
                 //send request to the server
                 // this is the part where i don't under stand. how do i send information to the server?
